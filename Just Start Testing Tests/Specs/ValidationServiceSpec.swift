@@ -11,6 +11,19 @@ import Nimble
 
 @testable import Just_Start_Testing
 
+//MARK: - 基本關鍵字
+/*
+ describe > "海豚" (描述一件事物)
+
+ context > "when out of water" (在某種情境下)
+
+ beforeEach > { 海豚.空翻 = True } (在此前提下)
+
+ it > "is loud" (描述它的行為或是結果)
+
+ expect > count is 4 (所造成的期待)
+ */
+
 class ValidationServiceSpec: QuickSpec {
     
     var validation: ValidationService!
@@ -61,6 +74,11 @@ class ValidationServiceSpec: QuickSpec {
                 })
                 expect(error?.errorDescription).to(equal(expectedError.errorDescription))
             }
+            
+            afterEach {
+                self.validation = nil
+            }
+            
         }
         
     }
